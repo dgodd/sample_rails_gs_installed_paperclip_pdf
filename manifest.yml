@@ -1,0 +1,8 @@
+---
+applications:
+- name: theapp
+  memory: 1G
+  buildpack: ruby_buildpack
+  instances: 1
+  random-route: true
+  command: bin/rake db:migrate && bin/rails server -p $PORT -e $RAILS_ENV

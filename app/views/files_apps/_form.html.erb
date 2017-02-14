@@ -1,0 +1,19 @@
+<%= simple_form_for @files_app, url: files_apps_path do |f| %>
+  <% if @files_app.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@files_app.errors.count, "error") %> prohibited this files_app from being saved:</h2>
+
+      <ul>
+      <% @files_app.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :avatar, as: :file %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
