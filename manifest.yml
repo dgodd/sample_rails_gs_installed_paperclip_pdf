@@ -5,4 +5,6 @@ applications:
   buildpack: ruby_buildpack
   instances: 1
   random-route: true
-  command: bin/rake db:migrate && bin/rails server -p $PORT -e $RAILS_ENV
+  # command: tar -C / -zxf dpkgfiles.tgz && bin/rake db:migrate && bin/rails server -p $PORT -e $RAILS_ENV
+  # command: bin/rake db:migrate && bin/rails server -p $PORT -e $RAILS_ENV
+  command: sh ./install_gs.sh && export PATH=$PWD/extrabin:$PATH && bin/rake db:migrate && bin/rails server -p $PORT -e $RAILS_ENV
